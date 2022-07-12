@@ -1,11 +1,12 @@
 import React, {useState,useEffect} from 'react'
 import { StatusBar } from 'expo-status-bar';
 import {Text, View, StyleSheet,FlatList,TouchableOpacity} from 'react-native';
-import Api from '../pages/Api';
+import Api from '../Api';
 
 
-export default function Frutas(){
-const[nomeFruta,setNomeFruta] = useState([]);
+export default function ListaFrutas(){
+
+const[dadosFruta,setdadosFruta] = useState([]);
 
 async function getFrutas(){
   try{
@@ -28,6 +29,10 @@ return (
 
     <Text style={estilo.titulo}>Lista de Frutas</Text>
 
+    <TouchableOpacity style={estilo.botaoCadFruta}>
+      <Text style={estilo.botaoTextoCadFruta}>Cadastrar Fruta</Text>
+    </TouchableOpacity>
+
     <FlatList
       data={dadosFrutas}
       keyExtractor={dadosFrutas => dadosFrutas.id}
@@ -45,8 +50,8 @@ return (
     />
 
     <StatusBar style="auto" />
-  </View>
-);
+    </View>
+  );
 }
 
 const estilo = StyleSheet.create({
@@ -74,5 +79,14 @@ const estilo = StyleSheet.create({
   },
   textoBotaoValor: {
     fontSize: 20
+  },
+  botaoCadFruta:{
+    backgroundColor: '#2a9d8f',
+    margin: 15,
+    padding: 5,
+    borderRadius: 10,
+  },
+  botaoTextoCadFruta:{
+    fontSize: 18
   }
 });
