@@ -69,9 +69,10 @@ const estilo = Stylesheet.create({
     container:{
         flex: 1,
         backgroundColor: '#e9c46a',
+        marginTop:20,
     },
     botaoCadastrar:{
-        backgroundColor:'',
+        backgroundColor:'#2a9d8f',
         margin: 15,
         padding: 5,
         borderRadius: 10,

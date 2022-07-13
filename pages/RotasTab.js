@@ -2,15 +2,15 @@ import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import Home from "./Home.js";
-import Pesquisa from "./Pesquisa.js";
+import Home from "./Home";
+import Pesquisa from "./Pesquisa";
 import RotasBotao from "RotasBotao";
 
 const Tab = createBottomTabNavigator();
 
 export default function RotasTab() {
     return (
-        <Tab.Navigator initialRouteName="Home">
+        <Tab.Navigator initialRouteName="Home"screenOptions={{headerShown:false}}>
             
             <Tab.Screen
                 name="Pesquisa"

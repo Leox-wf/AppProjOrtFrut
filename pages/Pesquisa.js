@@ -1,13 +1,24 @@
 import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import {Text, View, StyleSheet, ImageBackground, TextInput, TouchableOpacity, Alert} from 'react-native';
-
+import {Text, View, StyleSheet, TextInput, TouchableOpacity, Alert} from 'react-native';
+import {pesquisarNomeFruta} from '../pages/Frutas/ModelFrutas';
 
 export default function Pesquisa(){
-  function pesquisarFruta(){
-    Alert.alert('Atenção','Não estamos em operação no momento.')
+
+const [dadosFrutas, setdadosFrutas] = useState([]);
+
+async function BuscarFrutas(){
+  const resultado = await pesquisarNomeFruta(nomeFruta);
+  if (resultado) {
+    setdadosFrutas(resultado);
+  } else {
+    Alert.alert('Fruta não encontrado!!');
+    setdadosFrutas('');
   }
-  
+}
+
+//--comentario--// 
+
    return(
       <View style={estilo.container}>
        <Text style={estilo.titulo}>Qual Fruta vc quer?</Text>
@@ -16,14 +27,14 @@ export default function Pesquisa(){
         style={estilo.textInput}
         />
         
-        <TouchableOpacity style={estilo.botao} onPress={()=> pesquisarFruta()}>
+        <TouchableOpacity style={estilo.botao} onPress={()=> BuscarFruta()}>
             <Text style={estilo.textoBotao} >Pesquisar</Text>
         </TouchableOpacity>
   
         <StatusBar style="auto" />
       </View>
    );   
-  }
+   }
   
   const estilo = StyleSheet.create({
       container: {

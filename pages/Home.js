@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import {Text, View, StyleSheet,ImageBackground} from 'react-native';
+import {View, StyleSheet,ImageBackground} from 'react-native';
 
 
 export default function Home(){
@@ -21,7 +21,8 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
     },
     img:{
+      flex:1,
       width:400,
-      height: 600
+      
     }
   });

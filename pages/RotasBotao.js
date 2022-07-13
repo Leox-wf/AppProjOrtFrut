@@ -8,4 +8,16 @@ import ListarFrutas from './Frutas/ListarFrutas';
 import CadastrarFruta from './Frutas/CadastrarFrutas';
 import AlterarFrutas from './Frutas/AlterarFrutas';
 
-export default function()
+export default function RotasBotao(){
+
+return(
+    <navBotao.Navigator>
+
+    <navBotao.Screen name="Lista" component={ListaFrutas} options ={{headerShow:false}}/>
+    <navBotao.Screen name="Cadastrar" component={ListaFrutas} options ={{headerShow:false}}/>
+    <navBotao.Screen name="Alterar" component={ListaFrutas} options ={{headerShow:false}}/>  
+    
+    </navBotao.Navigator>
+     );
+
+  }

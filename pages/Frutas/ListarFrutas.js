@@ -29,9 +29,10 @@ return (
 
     <Text style={estilo.titulo}>Lista de Frutas</Text>
 
-    <TouchableOpacity style={estilo.botaoCadFruta}>
+    <TouchableOpacity style={estilo.botaoCadFruta} onPress={() => NavigationPreloadManager.navigate('Cadastrar')}>
       <Text style={estilo.botaoTextoCadFruta}>Cadastrar Fruta</Text>
     </TouchableOpacity>
+    <StatusBar style="auto"/>
 
     <FlatList
       data={dadosFrutas}
